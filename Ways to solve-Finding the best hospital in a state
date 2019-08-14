@@ -1,1 +1,15 @@
-
+Instruction:  
+1.  Write a function called best  best<-function(state, outcome) 
+2.  Best  takes 2 arguments:   
+      a. The 2 character abbreviated names of a state 
+      b.  outcome name
+      
+      We were already given the function passed to the varable best with the two arguements
+      
+      best<-function(state, outcome) 
+      
+ 3.  Function reads “Outcome of Care Measure.cvs”  
+     
+ 
+      ## Read the outcome data
+    dat <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
