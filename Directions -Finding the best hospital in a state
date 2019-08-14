@@ -1,0 +1,67 @@
+II.  Finding the best hospital in a state
+
+Instruction:  
+1.  Write a function called best  best<-function(state, outcome) 
+2.  Best  takes 2 arguments:   
+      a. The 2 character abbreviated names of a state 
+      b.  outcome name
+3.  Function reads “Outcome of Care Measure.cvs”  
+4.  Function returns a character vector with the name of the hospital which has the best (ie. lowest) 30- day mortality for a 
+      specific outcome in each state.
+
+HINTS
+1.  The hospital name is provided in the Hospital.Name variable. 
+2.  The outcome can be one of “heart attack”, “heart failure”, or “pneumonia”
+      a.  Hospital that do not have data on a particular outcome should be excluded from the set of hospitals when deciding the ranking. 
+3.  The best (ie. lowest) 30- day mortality for a specific outcome in each state.
+4.  If there is a tie for the best hospital for a given outcome, 
+      a. then the hospital names should be sorted in alphabetical order 
+      b. And the first hospital in that set should be chosen 
+(I.e. if hospitals “b”, “c”, and “f” are tied for best, then the hospital “b” should be returned)
+  5.   The function must check the validity of it’s arguments
+	    Example
+                  a.  If an invalid “state” value is passed to best, the function should throw an error via the 
+                  stop function with the exact message “invalid state”.   
+Example of stop function 
+https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/stop
+       	      b.   If an invalid “outcome” value is passed to best, the function should throw an error via the
+                  stop function with the exact message “invalid outcome
+   6.   Test your function “   Sample outputs from the function are provided.  ( see below)
+   7.    Save your code for this function to a file named best.R 
+
+
+
+Given: 
+best <- function(state, outcome) { 
+
+## Read outcome data 
+
+## Check that state and outcome are valid 
+
+## Return hospital name in that state with lowest 30-day death 
+
+## rate
+
+ } 
+_______________________________________________________________________________________________
+Here is some sample output from the function. 
+> source("best.R")
+
+> best("TX", "heart attack") 
+[1] "CYPRESS FAIRBANKS MEDICAL CENTER" 
+
+> best("TX", "heart failure") 
+[1] "FORT DUNCAN MEDICAL CENTER" 
+
+> best("MD", "heart attack") 
+[1] "JOHNS HOPKINS HOSPITAL, THE" 
+
+> best("MD", "pneumonia")
+ [1] "GREATER BALTIMORE MEDICAL CENTER" 
+
+> best("BB", "heart attack") Error in best("BB", "heart attack") : invalid state 
+
+> best("NY", "hert attack") Error in best("NY", "hert attack") : invalid outcome 
+
+
+
