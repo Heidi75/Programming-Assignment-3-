@@ -10,9 +10,9 @@ outcome name
       4.  Function returns a character vector with the name of the hospital which has the best (ie. lowest) 30- day mortality for a specific outcome in each state.
 
 HINTS
- The hospital name is provided in the Hospital.Name variable. 
- The outcome can be one of “heart attack”, “heart failure”, or “pneumonia”
- Hospital that do not have data on a particular outcome should be excluded from the set of hospitals when deciding the ranking. 
+The hospital name is provided in the Hospital.Name variable. 
+The outcome can be one of “heart attack”, “heart failure”, or “pneumonia”
+Hospital that do not have data on a particular outcome should be excluded from the set of hospitals when deciding the ranking. 
 The best (ie. lowest) 30- day mortality for a specific outcome in each state.
 If there is a tie for the best hospital for a given outcome, 
 then the hospital names should be sorted in alphabetical order 
