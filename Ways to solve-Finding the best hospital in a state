@@ -25,3 +25,16 @@ Instruction:
  
       ## Read the outcome data
     dat <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
+    
+     5.   The function must check the validity of it’s arguments
+         ## Check that state and outcome are valid
+	    Example
+                 a.  If an invalid “state” value is passed to best, the function should throw an error via the stop function 
+                 with the exact message “invalid state”.   
+Example of stop function 
+https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/stop
+       	     b.   If an invalid “outcome” value is passed to best, the function should throw an error via the 
+                 stop function with the exact message “invalid outcome
+                 
+                 
+
