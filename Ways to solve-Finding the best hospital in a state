@@ -12,6 +12,16 @@ Instruction:
      
      Data frames look like matrices, but can have columns of different types. 
      This makes them ideally suited for representing datasets, where some variables can be numeric and others can be categorical.
+     
+     More about how to read from a data frame please read below.
+     
+     https://data.princeton.edu/r/readingdata
+     http://rprogramming.net/read-csv-in-r/
+     
+     In R, you use the read.csv() function to import data in CSV format. This function has a number of arguments, 
+     but the only essential argument is file, which specifies the location and filename. 
+     
+     colClasses in read.cvs manually sets the data types for each column
  
       ## Read the outcome data
     dat <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
