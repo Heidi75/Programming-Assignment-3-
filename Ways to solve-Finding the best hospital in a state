@@ -35,6 +35,9 @@ Example of stop function
 https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/stop
        	     b.   If an invalid “outcome” value is passed to best, the function should throw an error via the 
                  stop function with the exact message “invalid outcome
-                 
+     
+     
+     Hint 2 from directions :  The outcome can be one of “heart attack”, “heart failure”, or “pneumonia”
+     
                  
 
