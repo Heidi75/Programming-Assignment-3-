@@ -10,6 +10,8 @@ Instruction:
       
  3.  Function reads “Outcome of Care Measure.cvs”  
      
+     Data frames look like matrices, but can have columns of different types. 
+     This makes them ideally suited for representing datasets, where some variables can be numeric and others can be categorical.
  
       ## Read the outcome data
     dat <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
