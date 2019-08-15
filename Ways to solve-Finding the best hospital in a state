@@ -7,6 +7,7 @@ Instruction:
       We were already given the function passed to the varable best with the two arguements
       
       best<-function(state, outcome) 
+ **************************************************************************************************     
       
  3.  Function reads “Outcome of Care Measure.cvs”  
      
@@ -24,8 +25,9 @@ Instruction:
      colClasses in read.cvs manually sets the data types for each column
  
       ## Read the outcome data
-    dat <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
+    data <- read.csv("outcome-of-care-measures.csv", colClasses = "character")[,c(2,7,11,17,23)]
     
+*****************************************************************************************************    
      5.   The function must check the validity of it’s arguments
         
 	    Example
@@ -39,7 +41,62 @@ https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/stop
      
      Hint 2 from directions :  The outcome can be one of “heart attack”, “heart failure”, or “pneumonia”
      
-      ## Check that state and outcome are valid
+     Look at your data files... from the print out of Hospital Compair Downloadable Database part 19.   Outcome of Care Measures.cvs
+     lists.  
+     We are looking for 
+     "Function returns a character vector with the name of the hospital which has the best 
+     (ie. lowest) 30- day mortality for a specific outcome in each state."
+     Lowest 30 -day mortality rate for “heart attack”, “heart failure”, or “pneumonia”
+     numbers 11-16 is about Heart attack
+     After looking at the data using head(outcome)  I see 
+     hospital names under column2, State names under the 2 letter abrevation in
+     in column 6, and Heart.Attack number 11 column, similarily for heartfailure column 17 and for Pneumonia column 23
+     ( Now that we know that we can limit the data in our dataframe to these columns  [,c(2,7,11,17,23)] adding to )
      
-                 
+     Example
+     
+     Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack
+1                                                      14.3
+2                                                      18.5
+3                                                      18.1
+4                                             Not Available
+5                                             Not Available
+6                                             Not Available
+________________________________________________________________________________________________________________
+
+
+https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/stop
+https://www.rdocumentation.org/packages/datasets/versions/3.6.1/topics/state
+https://www.statmethods.net/management/operators.html
+ $ term to pull a certain value from a function (e.g. t.test(x)$p.value), 
+ We know the column of outcome which contains state is called "State" by observation of the head(outcome)
+
+      ## Check that state and outcome are valid
+      
+      ## If an invalid “state” value is passed to best, 
+      ## the function should throw an error via the stop function with the exact message “invalid state”.
+      # the state is the varible which is taken into the function therefore this tests if they are entering the correct or not
+      # varibles for the function to process if not it is an error
+      
+      if(!any(data$State == state)) {
+    stop("invalid state")
+  }
+     
+___________________________________________________________________________________________________________________ 
+
+# If an invalid “outcome” value is passed to best, the function should throw an error via 
+# the stop function with the exact message “invalid outcome"
+# We are not taking outcomes which many 
+# the outcome is the varible which is taken into the function therefore this tests if they are entering the correct or not
+# varibles for the function to process if not it is an error
+
+
+  if(! (outcome == "heart attack" || outcome == "heart failure" || outcome == "pneumonia") ) {
+    stop("invalid outcome")
+  }
+  
+  
+
+
+
 
