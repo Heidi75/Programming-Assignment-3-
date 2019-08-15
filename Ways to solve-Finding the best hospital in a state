@@ -145,6 +145,16 @@ We want to return the hospital name ( by state ) with the minimum number of hear
 
 1.   We search the dataframe for the state and look under the outcome for that state for the min while ignoring the NA
 
+ colIndex <- integer(0)
+  if('heart attack' == outcome)
+    colIndex <- 3
+  else if('heart failure' == outcome)
+    colIndex <-  4
+  else if('pneumonia' == outcome)
+    colIndex <- 5
+  else {
+    stop("invalid outcome")
+  }
 
 
 _____________________________________________________________________________________________________________________________________
