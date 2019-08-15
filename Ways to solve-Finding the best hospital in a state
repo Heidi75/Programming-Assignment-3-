@@ -141,20 +141,18 @@ So column index 3 = Heart Attack
                 4 = Heart Failure
 		5 = Pneumonia
 
+Change names of columns to match outcome
+# Rename a column in R
+names(data)[3]<-"heart attack"
+names(data)[4]<-"heart failure"
+names(data)[5]<-"pneumonia"
+
 We want to return the hospital name ( by state ) with the minimum number of heart attack ( if the outcome varible is heart attack )ect.
 
 1.   We search the dataframe for the state and look under the outcome for that state for the min while ignoring the NA
 
- colIndex <- integer(0)
-  if('heart attack' == outcome)
-    colIndex <- 3
-  else if('heart failure' == outcome)
-    colIndex <-  4
-  else if('pneumonia' == outcome)
-    colIndex <- 5
-  else {
-    stop("invalid outcome")
-  }
+chic.f <- filter(state, min(outcome),Hospital.Name)
+ select(chic.f, date, tmpd, pm25tmean2)
 
 
 _____________________________________________________________________________________________________________________________________
