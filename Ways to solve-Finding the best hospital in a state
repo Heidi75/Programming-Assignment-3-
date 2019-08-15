@@ -151,7 +151,7 @@ We want to return the hospital name ( by state ) with the minimum number of hear
 
 1.   We search the dataframe for the state and look under the outcome for that state for the min while ignoring the NA
 
-chic.f <- filter(state, min(outcome),Hospital.Name)
+chic.f <- filter(State== "state" & min(outcome, na.rm = TRUE),Hospital.Name)
  select(chic.f, date, tmpd, pm25tmean2)
 
 
