@@ -1,7 +1,5 @@
 
 
-
-
 best<-function(state, outcome) {
   
   ## Read the outcome data
@@ -11,7 +9,7 @@ best<-function(state, outcome) {
   
   ##Change names of columns to match outcome
   
-  colnames(data) <- c("hospital name", "state", "heart attack", "heart failure", "pneumonia")
+  colnames(data) <- c("Hospital.Name", "State", "heart attack", "heart failure", "pneumonia")
   
   ## Check that state and outcome are valid
   
@@ -52,4 +50,3 @@ best<-function(state, outcome) {
 }
 
 best("SC", "heart attack")
-
