@@ -18,5 +18,9 @@ Rank Hostpital( state, outcome, num ){
   if(! (outcome == "heart attack" || outcome == "heart failure" || outcome == "pneumonia") ) {
     stop("invalid outcome")
   }
+  ##Check if num is valid, num can be best or worst or a number
   
-  ##Check if num is valid
+  if (!num=="best"|| num=="worst" ||is.numeric(num)){
+    stop("invalid num")
+    
+    ##For each state, find the hospital of the given rank
